@@ -35,3 +35,11 @@ progress/progress.json   your progress (written by the site)
 ```
 
 Run locally: `cd docs && python3 -m http.server` then open http://localhost:8000.
+
+## Make your own copy
+
+1. **Fork** this repo (or download it and push it to a new repo of your own).
+2. Replace `progress/progress.json` with a fresh one: in the site, open **Setup → Reset all progress** after connecting, or edit the file so `weeks`, `projects`, `log` and `achievements` are empty and `start` is your start date.
+3. Switch on GitHub Pages: **Settings → Pages → Deploy from a branch → main → /docs**.
+4. Open your site, go to **Setup**, set your start date, and paste a token for *your* repo. The site detects your username and repo name from its own URL.
+5. Want your own story and curriculum? Edit `docs/js/curriculum.js` (chapter stories, weekly topics, builds and books).

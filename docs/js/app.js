@@ -62,6 +62,7 @@ function renderHUD() {
 }
 
 function renderSync() {
+  const pl = $('#progress-link'); if (pl) pl.href = `https://github.com/${store.config.owner}/${store.config.repo}/blob/${store.config.branch}/${store.config.path}`;
   const el = $('#sync');
   const s = store.status;
   const label = { local: 'Local only', syncing: 'Syncing…', saved: 'Saved to GitHub', dirty: 'Saving soon', error: 'Sync error', readonly: 'Read-only' }[s] || s;

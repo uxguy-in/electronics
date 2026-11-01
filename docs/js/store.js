@@ -30,6 +30,15 @@ const defaultConfig = {
   sound: true,
 };
 
+// On a GitHub Pages copy (someone's fork), point at that copy's own repo automatically.
+(function detectRepo() {
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/i);
+  if (!m) return;
+  const repo = location.pathname.split('/').filter(Boolean)[0];
+  defaultConfig.owner = m[1];
+  if (repo) defaultConfig.repo = repo;
+})();
+
 export function loadConfig() {
   try { return { ...defaultConfig, ...JSON.parse(localStorage.getItem(LS_CONFIG) || '{}') }; }
   catch { return { ...defaultConfig }; }
